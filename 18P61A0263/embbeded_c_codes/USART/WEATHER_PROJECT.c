@@ -201,7 +201,7 @@ SK_LCD_init();
 		
 		x=0;
 	SK_LCD_Write_STR("temp = ");
-	ADC_CR2 |= 0x1<<30;
+	ADC_CR2 |= 0x1<<30;//30th bit for start conversion (power consumption is high)
 	while(!(ADC_SR & 0x2)){};
 		a = ADC_DR;	
 		a/=10;
